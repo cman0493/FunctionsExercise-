@@ -63,40 +63,41 @@ function spookyGhost() {
   // Yes
   
   // 11
-  const costumes = [`Ghost`, `Hobo`, `Superman`];
+  const costumes = [`Ghost`, `Princess`, `Pirate`];
 
-  const upperCostumes = costumes.map(function (parameter){
-     return parameter.toUpperCase();
-  });
+  const upperCostumes = costumes.map(i => i.toUpperCase());
   console.log(upperCostumes);
-  
+
   // 12
+  const stephenKingMovies = [
+    "The Shining",
+    "Christine",
+    "It",
+    "The Mist",
+    "Creepshow",
+    "Pet Sematary"
+  ];
+  
+  const twoMovies = stephenKingMovies.filter(i => i.length === 9);
+  console.log(twoMovies);
+
+  // 13
   const halloweenSongs1 = ["Monster Mash", "Thriller"];
   
   const halloweenSongs2 = ["I Put A Spell On You", "This Is Halloween", "Ghostbusters"];
   
-  function halloweenJukeBox(songs){
-    const randomIndex = Math.floor(Math.random() * songs.length);
-    const randomSong = songs[randomIndex];
-    console.log(randomSong);
+  halloweenJukeBox = (songs) => {
+    const random = Math.floor(Math.random() * songs.length);
+    console.log(songs[random]);
   }
-  
+
   halloweenJukeBox(halloweenSongs1);
   halloweenJukeBox(halloweenSongs2);
-  
-  
-  // 13
-  function caps(string){
-    let str = "";
-    for (i = 0; i < string.length; i++){
-      if (i % 2 === 0) {
-        str += string.charAt(i).toUpperCase();
-        // str += string[i].toUpperCase();
-      } else {
-        str += string.charAt(i);
-        // str += string[i];
-      }
-    }
-    return str;
-  }  
-  console.log(caps(`abcdef`));
+
+  //14
+caps = string => {
+  for (i = 0; i < string.length; i += 2){
+    string = string.substring(0, i) + string[i].toUpperCase() + string.substring(i + 1);
+  }
+  return string;
+}
